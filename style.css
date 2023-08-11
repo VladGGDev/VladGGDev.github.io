@@ -3,8 +3,7 @@
 	/* --body-margin: 15px;
 	--nav-size: 50px; */
 
-	--link: var(--accent);
-	--link-hover: #90c0ff;
+	--link: var(--text);
 	--link-active: #fff79b;
 
 	--text: #e4e4e4;
@@ -30,47 +29,52 @@ div.root-margin {
 	width: 100%;
 }
 
-
-
-
-
-/* ===== HERO DIV ===== */
-div.hero {
-	width: 100%;
-	height: 500px;
-
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	background-image: linear-gradient(45deg, var(--primary), var(--accent));
+.text-shadow-big {
+	text-shadow: 0px 0px 20px #1a1a1a7a;
 }
-
-h1 {
-	text-align: center;
-	color: var(--secondary);
-	font-size: 4em;
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0px 10%;
-}
-
 
 
 
 
 /* ===== LINKS ===== */
 a {
+	position: relative;
+	/* text-decoration: none; */
+
 	color: var(--link);
-	transition: color 0.1s ease;
+	transition: color 0.25s linear;
 }
 
-a:hover {
-	color: var(--link-hover);
+a.no-decoration {
+	text-decoration: none;
+}
+
+a.no-decoration::before {
+	content: "";
+
+	position: absolute;
+	bottom: -2px;
+	left: 50%;
+	right: 50%;
+	/* width: 0%; */
+	height: 1.5px;
+
+	background-color: var(--link);
+
+	transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+a.no-decoration:hover::before {
+	left: 5px;
+	right: 5px;
 }
 
 a:active {
 	color: var(--link-active);
+}
+
+a.no-decoration:active::before {
+	background-color: var(--link-active);
 }
 
 a.button {
@@ -84,15 +88,54 @@ a.button {
 
 
 
+/* ===== HERO DIV ===== */
+.hero {
+	position: relative;
+
+	width: 100%;
+	height: 100svh;
+
+	margin-bottom: 5rem;
+
+	background-image: linear-gradient(45deg, var(--primary), var(--accent));
+}
+
+.hero-text-container {
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.hero h1 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	text-align: center;
+	color: var(--secondary);
+	font-size: 6rem;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0px 10%;
+}
+
+
+
+
+
 /* ===== NAVIGATION BAR ===== */
 nav {
-	position: sticky;
-	top: 0px;
-	left: 0px;
-	right: 0px;
-	height: 50px;
+	box-sizing: border-box;
+	padding: 0px 2.5%;
+	width: 100%;
+	height: 100px;
+	/* background: rgba(0, 0, 0, 0.1); */
 
-	background: var(--secondary);
 
 	display: flex;
 	flex-wrap: wrap;
