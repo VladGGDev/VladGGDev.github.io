@@ -1,5 +1,12 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
 :root {
 	scroll-behavior: smooth;
+
 	--margin-horizontal: max(1.5rem, 10%);
 
 	--link: var(--text);
@@ -18,7 +25,6 @@
 
 body {
 	background-attachment: fixed;
-	margin: 0px;
 	margin-bottom: 2rem;
 
 	background: var(--background);
@@ -30,7 +36,6 @@ body {
 
 
 div.root-margin {
-	box-sizing: border-box;
 	padding: 1rem var(--margin-horizontal);
 	width: 100%;
 }
@@ -68,6 +73,7 @@ div.root-margin {
 /* ===== LINKS ===== */
 a {
 	color: var(--link);
+	cursor: pointer;
 }
 
 a.no-decoration {
@@ -76,6 +82,7 @@ a.no-decoration {
 }
 
 a.no-decoration::before {
+	--easing: cubic-bezier(0.16, 1, 0.3, 1);
 	content: "";
 
 	position: absolute;
@@ -86,8 +93,8 @@ a.no-decoration::before {
 
 	background-color: var(--link);
 
-	transition: left 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-		right 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+	transition: left 0.5s var(--easing),
+		right 0.5s var(--easing),
 		color 0.2s,
 		background-color 0.2s;
 }
@@ -146,11 +153,19 @@ a.button:active {
 
 	margin-bottom: 5rem;
 
-	background-image: linear-gradient(45deg, var(--primary), var(--accent), var(--primary), var(--accent));
-	background-size: 400%;
+	/* background-image: linear-gradient(45deg, var(--primary), var(--accent), var(--primary), var(--accent));
+	background-size: 400%; */
+	background: linear-gradient(90deg, #2d4de0, #9f71f0, #fc6277, #f8ef6f, #fc6277, #9f71f0, #2d4de0, #9f71f0);
+	background-size: 750%;
 	background-position: 0%;
 
 	animation: hero-bg 10s linear 0s infinite;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 2rem;
 }
 
 @keyframes hero-bg {
@@ -163,28 +178,19 @@ a.button:active {
 	}
 }
 
-.hero-text-container {
-	width: 100%;
-	height: 100%;
-
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-}
-
 .hero h1 {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-
 	text-align: center;
 	color: var(--secondary);
-	font-size: 6rem;
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0px 10%;
+	font-size: min(6rem, 15vw);
+}
+
+.hero>div {
+	color: var(--background);
+	/* font-weight: bold; */
+	font-style: italic;
+	/* transform: skewX(-15deg); */
+	font-size: 1.25rem;
+	letter-spacing: 1px;
 }
 
 
@@ -193,7 +199,9 @@ a.button:active {
 
 /* ===== NAVIGATION BAR ===== */
 nav {
-	box-sizing: border-box;
+	position: absolute;
+	top: 0px;
+
 	padding: 0px 5%;
 	width: 100%;
 	height: 100px;
@@ -204,7 +212,8 @@ nav {
 	flex-wrap: wrap;
 	justify-content: right;
 	align-items: center;
-	column-gap: 60px;
+	column-gap: min(60px, 5vw);
+	/* gap: 60px; */
 }
 
 nav div.left {
@@ -220,7 +229,6 @@ nav div.left {
 div.section {
 	--section-padding: 50px;
 	display: block;
-	box-sizing: border-box;
 	width: 100%;
 	padding: var(--section-padding) var(--margin-horizontal);
 
@@ -236,7 +244,6 @@ div.section::after {
 	content: "";
 
 	display: block;
-	box-sizing: border-box;
 	width: 100%;
 	height: 1px;
 
@@ -258,7 +265,6 @@ div.section::after {
 /* ===== H2 in TEXT SECTION ===== */
 h2 {
 	font-size: 2rem;
-	margin: 0px;
 	margin-bottom: 1rem;
 }
 
@@ -266,12 +272,9 @@ h2 {
 
 
 
-@media (width < 700px) {
-	.hero h1 {
-		font-size: 3rem;
-	}
-
+@media (width < 600px) {
 	nav {
-		column-gap: 30px;
+		/* column-gap: 30px; */
+		display: none;
 	}
 }
