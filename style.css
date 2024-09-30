@@ -41,7 +41,7 @@ div.root-margin {
 }
 
 .text-shadow-big {
-	text-shadow: 0px 0px 16px rgba(0, 0, 0, 75%);
+	text-shadow: 0px 0px 8px rgba(0, 0, 0, 85%);
 }
 
 
@@ -51,6 +51,7 @@ div.root-margin {
 /* ===== SCROLL BAR ===== */
 ::-webkit-scrollbar {
 	width: 10px;
+	height: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -104,6 +105,8 @@ a.no-decoration::before {
 	left: 50%;
 	right: 50%;
 	height: 1.5px;
+
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 85%);
 
 	background-color: var(--col-link);
 
@@ -165,11 +168,10 @@ a.button:active {
 
 	margin-bottom: 5rem;
 
-	/* background-image: repeating-linear-gradient(45deg, var(--primary), var(--accent), var(--primary), var(--accent)); */
-	/* background-image: repeating-linear-gradient(90deg, red, blue, red, blue); */
-	/* background-size: 400%; */
-	background: repeating-linear-gradient(90deg, #2d4de0, #9f71f0, #fc6277, #f8ef6f, #fc6277, #9f71f0, #2d4de0);
-	background-size: 400%;
+	/* background: repeating-linear-gradient(90deg, #2d4de0, #9f71f0, #fc6277, #f8ef6f, #fc6277, #9f71f0, #2d4de0); */
+	/* background: repeating-linear-gradient(90deg, #37fafd, #2d36e0, #37fafd); */
+	/* background: repeating-linear-gradient(90deg, #12c2e9, #c471ed, #f64f59); */
+	background-size: 4000px;
 	background-position: 0%;
 
 	/* animation: hero-bg 5s linear 0s infinite; */
@@ -178,7 +180,7 @@ a.button:active {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	gap: 3.5rem;
+	gap: 7.5vh;
 }
 
 /* @keyframes hero-bg {
@@ -194,7 +196,7 @@ a.button:active {
 .hero h1 {
 	text-align: center;
 	color: var(--col-text);
-	font-size: min(6rem, 15vw);
+	font-size: min(6rem, min(15vw, 15vh));
 }
 
 .hero .splash-text {
@@ -308,6 +310,11 @@ h2 {
 	width: 100%;
 	height: max-content;
 	overflow-x: auto;
+
+	padding: 20px;
+
+	border-radius: 32px;
+	box-shadow: inset 0px 0px 32px rgba(0, 0, 0, 50%);
 }
 
 .section>.card-container {

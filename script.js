@@ -22,6 +22,26 @@ document.getElementById("age").innerText = myAge;
 // ===== Hero =====
 // Hero background scrolling
 const hero = document.getElementById("hero");
+
+const backgroundGradients = [
+	["#2d4de0", "#9f71f0", "#fc6277", "#f8ef6f"],
+	["#37fafd", "#2d36e0"],
+	// ["#12c2e9", "#c471ed", "#f64f59"],
+	// ["#40E0D0", "#ffd129", "#f64f59"],
+	["#03001e", "#7303c0", "#f64f59", "#fdeff9"]
+];
+
+function GenerateBackgroundGradient()
+{
+	const colors = RandomFromCollection(backgroundGradients);
+	let colorText = colors.join() + ",";
+	colors.reverse().shift();
+	colorText += colors.join();
+	return "repeating-linear-gradient(90deg," + colorText + ")";
+}
+
+hero.style.backgroundImage = GenerateBackgroundGradient();
+
 let bgOffset = 0;
 setInterval(() =>
 {
@@ -63,12 +83,12 @@ const splashTexts = [
 	"Don't stop reading books",
 	["1 million beers!", 0.5],
 	"Narwhals are real animals",
-	["You have just lost<b>The Game</b>", 0.5],
+	["You have just lost <b>The Game</b>", 0.5],
 	"Ice cream time!",
 	"Don't burn yourself out",
 	"Kebab is my favourite food!!",
 	["E = mc<sup>2</sup>", 1, false],
-	"Minecraft was revolutionary when it came out",
+	["Minecraft was revolutionary when it came out", 0.5],
 	"Hello world!",
 	"Don't forget to drink water!",
 	"I'm also a game developer",
@@ -80,6 +100,7 @@ const splashTexts = [
 	["😏😏😏", 0.5, false],
 	'Say "no!" to bugs',
 	"Bugs are my worst enemy >:(",
+	"<u>Bugless</u> as of now",
 ];
 
 
