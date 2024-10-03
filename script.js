@@ -28,7 +28,7 @@ const backgroundGradients = [
 	["#37fafd", "#2d36e0"],
 	// ["#12c2e9", "#c471ed", "#f64f59"],
 	// ["#40E0D0", "#ffd129", "#f64f59"],
-	["#03001e", "#7303c0", "#f64f59", "#fdeff9"]
+	["#03001e", "#7303c0", "#f64f59", "#f0b3c1"]
 ];
 
 function GenerateBackgroundGradient()
@@ -89,7 +89,7 @@ const splashTexts = [
 	"Kebab is my favourite food!!",
 	["E = mc<sup>2</sup>", 1, false],
 	["Minecraft was revolutionary when it came out", 0.5],
-	"Hello world!",
+	"Hello, world!",
 	"Don't forget to drink water!",
 	"I'm also a game developer",
 	"I'm alsa a web developer",
@@ -99,8 +99,19 @@ const splashTexts = [
 	["Sometimes I play video games instead of programming 😏", 0.5, false],
 	["😏😏😏", 0.5, false],
 	'Say "no!" to bugs',
-	"Bugs are my worst enemy >:(",
+	["Bugs are my worst enemy >:(", 1, false],
 	"<u>Bugless</u> as of now",
+	'<span style="font-size:1rem;">Bigger!</span> <span style="font-size:1.25rem;">Bigger!</span> <span style="font-size:1.5rem;">Bigger!</span>',
+	['<span style = "display: inline-block; translate:-4px -1px; rotate:-10deg" >H</span><span style="display: inline-block; translate:-1px 2px; rotate:5deg">I</span><span style="display: inline-block; translate:5px -5px; rotate:10deg">!!</span>', 1, false],
+	'Let me be <span style="opacity:0.5;">clear</span>',
+	"Ehehehe...",
+	['Hiiiii<span style="opacity:0.65;">ii</span><span style="opacity:0.5;">ii</span><span style="opacity:0.25;">ii</span><span style="opacity:0.1;">ii</span>', 0.9],
+	"Hello, future employer!",
+	"What does this button do?",
+	['<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">This splash text is actually a link!</a>', 0.25],
+	["Vibe check!", 0.5],
+	"Check your posture!",
+	"Ergonomics!"
 ];
 
 
@@ -153,3 +164,20 @@ function ChangeSplash()
 }
 
 ChangeSplash();
+// ForceSplash();
+
+
+
+
+
+// ===== Scrolling card sections =====
+// const cardContainers = document.querySelectorAll(".card-container");
+// console.log(cardContainers);
+// cardContainers.forEach(container =>
+// {
+// 	container.addEventListener("wheel", (event) =>
+// 	{
+// 		container.scrollLeft += event.deltaY * 0.5;
+// 		console.log(event.deltaY);
+// 	});
+// });

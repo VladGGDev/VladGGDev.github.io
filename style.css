@@ -41,7 +41,7 @@ div.root-margin {
 }
 
 .text-shadow-big {
-	text-shadow: 0px 0px 8px rgba(0, 0, 0, 85%);
+	text-shadow: 0px 0px 12px rgba(0, 0, 0, 100%);
 }
 
 
@@ -162,19 +162,13 @@ a.button:active {
 /* ===== HERO DIV ===== */
 .hero {
 	position: relative;
-
 	width: 100%;
 	height: 100svh;
-
 	margin-bottom: 5rem;
 
-	/* background: repeating-linear-gradient(90deg, #2d4de0, #9f71f0, #fc6277, #f8ef6f, #fc6277, #9f71f0, #2d4de0); */
-	/* background: repeating-linear-gradient(90deg, #37fafd, #2d36e0, #37fafd); */
 	/* background: repeating-linear-gradient(90deg, #12c2e9, #c471ed, #f64f59); */
 	background-size: 4000px;
 	background-position: 0%;
-
-	/* animation: hero-bg 5s linear 0s infinite; */
 
 	display: flex;
 	justify-content: center;
@@ -183,20 +177,13 @@ a.button:active {
 	gap: 7.5vh;
 }
 
-/* @keyframes hero-bg {
-	0% {
-		background-position: 0%;
-	}
-
-	100% {
-		background-position: 100%;
-	}
-} */
-
 .hero h1 {
 	text-align: center;
 	color: var(--col-text);
 	font-size: min(6rem, min(15vw, 15vh));
+
+	opacity: 0;
+	animation: hero-anim 0.75s ease 0.25s 1 normal forwards;
 }
 
 .hero .splash-text {
@@ -207,6 +194,9 @@ a.button:active {
 	font-size: 1.25rem;
 	letter-spacing: 1px;
 	text-align: center;
+
+	opacity: 0;
+	animation: hero-anim 0.75s ease 0.5s 1 normal forwards;
 }
 
 
@@ -221,22 +211,53 @@ nav {
 	padding: 0px 5%;
 	width: 100%;
 	height: 100px;
-	/* background: rgba(0, 0, 0, 0.1); */
+	/* background: rgba(0, 0, 0, 0.05); */
 
+	font-size: 1.25rem;
 
 	display: flex;
-	/* flex-wrap: wrap; */
 	justify-content: right;
 	align-items: center;
 	column-gap: min(60px, 5vw);
 	/* gap: 60px; */
+
+	opacity: 0;
+	animation: hero-anim 0.75s ease 0s 1 normal forwards;
 }
 
 nav div.left {
-	font-size: 1.5rem;
+	font-size: 1.75rem;
 	margin-right: auto;
 }
 
+@media (width < 650px) {
+	nav {
+		/* column-gap: 30px; */
+		display: none;
+	}
+}
+
+@media (height < 550px) {
+	nav {
+		/* column-gap: 30px; */
+		display: none;
+	}
+}
+
+
+
+/* Hero animation */
+@keyframes hero-anim {
+	from {
+		transform: translateY(-15px);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
 
 
 
@@ -291,13 +312,6 @@ h2 {
 
 
 
-
-@media (width < 600px) {
-	nav {
-		/* column-gap: 30px; */
-		display: none;
-	}
-}
 
 
 
