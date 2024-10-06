@@ -14,9 +14,8 @@
 	<div class="hero" id="hero">
 		<nav>
 			<div class="left"><a href="" class="text-shadow-big no-decoration"><abbr title="Reset this page and get a new splash text">VladGG</abbr></a></div>
-			<div><a id="about-me-link" href="#about-me" class="text-shadow-big no-decoration">About me</a></div>
-			<div><a id="my-games-link" href="#my-games" class="text-shadow-big no-decoration">My games</a></div>
-			<div><a id="my-web-experiments-link" href="#my-web-experiments" class="text-shadow-big no-decoration">My web experiments</a></div>
+			<div><a id="about-me-link" href="#about" class="text-shadow-big no-decoration">About</a></div>
+			<div><a id="my-games-link" href="#my-stuff" class="text-shadow-big no-decoration">My stuff</a></div>
 		</nav>
 
 		<h1 style="text-shadow: 0px 0px 20px rgba(0, 0, 0, 75%);">VladGG's<br>experiments</h1>
@@ -34,84 +33,87 @@
 	</div>
 
 	<div class="section-container">
-		<div class="section" id="about-me">
-			<h2>About Me</h2>
-			Hello, my name is Vlad and I am <span id="age"></span> years old. When I don't play video games, I spend my time
-			working on various projects. I have been coding since I was 12 years old and have gained a lot of experience. I mostly make games
-			with C# in the Unity game engine or thr MonoGame framework, but I can also code in C++, make websites, and use Python.
-		</div>
-
-		<div class="section" id="my-games">
-			<h2>My Games</h2>
-			Here are links to all of the games I made.
-			<div class="card-container">
-				<div class="card">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-					Totam repudiandae beatae at ipsa suscipit perspiciatis illo rem exercitationem aliquid,
-					fuga inventore, incidunt corporis!
-				</div>
-				<div class="card">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-					Totam repudiandae beatae at ipsa suscipit perspiciatis illo rem exercitationem aliquid,
-					fuga inventore, incidunt corporis! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Animi labore incidunt neque blanditiis ipsa. Voluptates qui consequuntur enim in repellendus!
-				</div>
-				<div class="card">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-					Totam repudiandae beatae at
-				</div>
+		<div class="section" id="about">
+			<div class="max-width">
+				<h2>About Me</h2>
+				Hello, my name is Vlad, I am <span id="age"></span> years old and I'm a Romanian programmer and game developer.
+				When I don't play video games, I spend my time working on various projects such as this very website.
+				I have been coding since I was 12 years old and have gained a lot of experience. CUrrently, I mostly make games
+				with C# in the Unity game engine or the MonoGame framework, but I can also code in C++, make websites, and use Python.
 			</div>
 		</div>
 
-		<div class="section" id="my-web-experiments">
-			<h2>My Web Experiments</h2>
-			I want to keep improving my web development skills. I will be making experiment websites and publishing them on this domain.
-			<div class="card-container">
-				<div class="card">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-					Totam repudiandae beatae at ipsa suscipit perspiciatis illo rem exercitationem aliquid,
-					fuga inventore, incidunt corporis!
+		<div class="section">
+			<div class="max-width">
+				<h2>About This Website</h2>
+				This website was made for fun and is the place where I will post links to my games, post blogs, and upload web experiments.
+				This could be also considered a portofolio website, being representative of my frontend skills and containing lisks
+				to my other works.
+			</div>
+		</div>
+
+		<div class="section" id="my-stuff">
+			<div class="max-width">
+				<h2>My Stuff</h2>
+				Here are link cards to all of my works.
+			</div>
+
+			<!-- ===== Filter and link cards ===== -->
+			<div class="filter-and-card-container">
+				<div class="filter-container">
+					<div class="filter" data-filter="all">All</div>
+					<div class="filter" data-filter="games">Games</div>
+					<div class="filter" data-filter="blogs">Blogs</div>
+					<div class="filter" data-filter="websites">Websites</div>
+					<div class="filter-selector" id="filter-selector"></div>
 				</div>
-				<div class="card">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-					Totam repudiandae beatae at ipsa suscipit perspiciatis illo rem exercitationem aliquid,
-					fuga inventore, incidunt corporis!
-				</div>
-				<div class="card">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-					Totam repudiandae beatae at ipsa suscipit perspiciatis illo rem exercitationem aliquid,
-					fuga inventore, incidunt corporis!
-				</div>
-				<div class="card">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-					Totam repudiandae beatae at ipsa suscipit perspiciatis illo rem exercitationem aliquid,
-					fuga inventore, incidunt corporis!
-				</div>
-				<div class="card">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-					Totam repudiandae beatae at ipsa suscipit perspiciatis illo rem exercitationem aliquid,
-					fuga inventore, incidunt corporis!
-				</div>
-				<div class="card">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-					Totam repudiandae beatae at ipsa suscipit perspiciatis illo rem exercitationem aliquid,
-					fuga inventore, incidunt corporis!
-				</div>
-				<div class="card">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-					Totam repudiandae beatae at ipsa suscipit perspiciatis illo rem exercitationem aliquid,
-					fuga inventore, incidunt corporis!
-				</div>
-				<div class="card">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-					Totam repudiandae beatae at ipsa suscipit perspiciatis illo rem exercitationem aliquid,
-					fuga inventore, incidunt corporis!
+
+				<div class="card-container">
+					<div class="card" data-filter-tag="all games">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+						Totam repudiandae beatae at ipsa suscipit perspiciatis illo rem exercitationem aliquid,
+						fuga inventore, incidunt corporis!
+					</div>
+					<div class="card" data-filter-tag="all games">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+						Totam repudiandae beatae at ipsa suscipit perspiciatis illo rem exercitationem aliquid,
+						fuga inventore, incidunt corporis! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Animi labore incidunt neque blanditiis ipsa. Voluptates qui consequuntur enim in repellendus!
+					</div>
+					<div class="card" data-filter-tag="all games">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+						Totam repudiandae beatae at
+					</div>
+					<div class="card" data-filter-tag="blogs">
+						Nothing yet...
+					</div>
+					<!-- <div class="card" data-filter-tag="websites">
+					Nothing yet...
+				</div> -->
+					<div class="card" data-filter-tag="all websites">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+						Totam repudiandae beatae at ipsa suscipit perspiciatis illo rem exercitationem aliquid,
+						fuga inventore, incidunt corporis!
+					</div>
+					<div class="card" data-filter-tag="all websites">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+						Totam repudiandae beatae at ipsa suscipit perspiciatis illo rem exercitationem aliquid,
+						fuga inventore, incidunt corporis!
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<script src="script.js"></script>
+	<script src="hero script.js"></script>
+	<script src="card filter script.js"></script>
+	<script>
+		// Age
+		const year = 31536000000;  // 1000ms * 60s * 60m * 24h * 365d
+		const myBirthday = new Date("2007-06-15T12:00:00");
+		const myAge = Math.floor((Date.now() - myBirthday) / year);
+		document.getElementById("age").innerText = myAge;
+	</script>
 </body>
 
 </html>

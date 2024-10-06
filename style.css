@@ -7,18 +7,20 @@
 :root {
 	scroll-behavior: smooth;
 
-	--margin-horizontal: max(2.5rem, 10%);
+	--val-margin-horizontal: max(2.5rem, 10%);
 
 	--col-link: var(--col-text);
 	--col-link-active: #fff79b;
 
 	--col-text: #e4e4e4;
-	--col-text-shadow: #1a1a1a7a;
 	--col-background: #292929;
-	--col-primary: #6ce1aa;
 	--col-secondary: #141f2c;
-	--col-accent: #5da3ff;
-	--col-accent-shaded: #5493e7;
+
+	--col-button: #5da3ff;
+	--col-button-shaded: #5493e7;
+
+	--col-card-border: rgba(119, 214, 255, 0.25);
+	--col-card-background: #1d1f2e6e;
 }
 
 
@@ -35,10 +37,7 @@ body {
 
 
 
-div.root-margin {
-	padding: 1rem var(--margin-horizontal);
-	width: 100%;
-}
+
 
 .text-shadow-big {
 	text-shadow: 0px 0px 12px rgba(0, 0, 0, 100%);
@@ -137,7 +136,7 @@ a.button {
 	margin: 10px 0px;
 	border-radius: 10px;
 
-	background-color: var(--col-accent);
+	background-color: var(--col-button);
 	text-decoration: none;
 	text-align: center;
 	text-shadow: 0px 0px 10px rgba(0, 0, 0, 100%);
@@ -146,7 +145,7 @@ a.button {
 }
 
 a.button:hover {
-	background-color: var(--col-accent-shaded);
+	background-color: var(--col-button-shaded);
 	transform: translateY(-1px);
 }
 
@@ -230,17 +229,17 @@ nav div.left {
 	margin-right: auto;
 }
 
-@media (width < 650px) {
+@media (width < 500px) {
 	nav {
-		/* column-gap: 30px; */
+		/* column-gap: 20px; */
 		display: none;
 	}
 }
 
 @media (height < 550px) {
 	nav {
-		/* column-gap: 30px; */
-		display: none;
+		/* display: none; */
+		height: 80px;
 	}
 }
 
@@ -262,17 +261,31 @@ nav div.left {
 
 
 
+/* ===== TEXT PARAGRAPHS ===== */
+.max-width {
+	max-width: 60rem;
+	margin: auto;
+}
+
+.two-columns {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 2rem;
+}
+
+
+
+
 /* ===== TEXT SECTION ===== */
 .section-container {
 	width: 100%;
-	/* display: block; */
 }
 
 div.section {
 	--section-padding: 50px;
 	/* display: block;
 	width: 100%; */
-	padding: var(--section-padding) var(--margin-horizontal);
+	padding: var(--section-padding) var(--val-margin-horizontal);
 
 	background-image: linear-gradient(to right, #0000, var(--col-secondary) 25% 75%, #0000);
 }
@@ -301,11 +314,7 @@ div.section::after {
 }
 
 
-
-
-
-/* ===== H2 in TEXT SECTION ===== */
-h2 {
+.section h2 {
 	font-size: 2rem;
 	margin-bottom: 1rem;
 }
@@ -315,15 +324,56 @@ h2 {
 
 
 
-
-/* ===== Cards ===== */
-.card-container {
+/* ===== FILTERS ===== */
+.filter-and-card-container {
 	display: flex;
-	gap: 1rem;
+	flex-direction: column;
+	align-items: center;
+	gap: 2rem;
+
+	margin-top: 2rem;
+}
+
+
+.filter-container {
+	position: relative;
+
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+
+	border: 2px solid var(--col-card-border);
+	border-radius: 9999px;
+	padding: 0px 2rem;
+	/* height: 3rem; */
+}
+
+.filter {
+	cursor: pointer;
+	padding: 0.75rem 0px;
+}
+
+.filter-selector {
+	position: absolute;
+	border: 2px solid var(--col-text);
+	border-radius: 9999px;
+	padding: 1rem 2rem;
+	width: 1rem;
+}
+
+
+
+/* ===== CARDS ===== */
+.card-container {
+	--min-card-width: 250px;
+
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(var(--min-card-width), 1fr));
+	gap: 1.5rem;
+
 
 	width: 100%;
 	height: max-content;
-	overflow-x: auto;
 
 	padding: 20px;
 
@@ -336,9 +386,10 @@ h2 {
 }
 
 .card {
-	flex-shrink: 0;
-	width: 250px;
+	/* width: 250px; */
 	padding: 1rem;
-	background-color: red;
+	background-color: var(--col-secondary);
+	border: 2px solid var(--col-card-border);
 	border-radius: 16px;
+	box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.9);
 }

@@ -11,14 +11,6 @@ function RandomFromCollection(collection)
 
 
 
-// Age
-const year = 31536000000;  // 1000ms * 60s * 60m * 24h * 365d
-const myBirthday = new Date("2007-06-15T12:00:00");
-const myAge = Math.floor((Date.now() - myBirthday) / year);
-document.getElementById("age").innerText = myAge;
-
-
-
 // ===== Hero =====
 // Hero background scrolling
 const hero = document.getElementById("hero");
@@ -83,7 +75,7 @@ const splashTexts = [
 	"Don't stop reading books",
 	["1 million beers!", 0.5],
 	"Narwhals are real animals",
-	["You have just lost <b>The Game</b>", 0.5],
+	["You have just lost <b>The Game</b>", 0.35],
 	"Ice cream time!",
 	"Don't burn yourself out",
 	"Kebab is my favourite food!!",
@@ -165,19 +157,3 @@ function ChangeSplash()
 
 ChangeSplash();
 // ForceSplash();
-
-
-
-
-
-// ===== Scrolling card sections =====
-// const cardContainers = document.querySelectorAll(".card-container");
-// console.log(cardContainers);
-// cardContainers.forEach(container =>
-// {
-// 	container.addEventListener("wheel", (event) =>
-// 	{
-// 		container.scrollLeft += event.deltaY * 0.5;
-// 		console.log(event.deltaY);
-// 	});
-// });
