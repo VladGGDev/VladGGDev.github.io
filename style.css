@@ -336,29 +336,45 @@ div.section::after {
 
 
 .filter-container {
-	position: relative;
+	--selection-width: 0;
+	--selection-offset-x: 0;
 
+	--container-h-padding: 2rem;
+
+	position: relative;
 	display: flex;
 	align-items: center;
 	gap: 2rem;
 
 	border: 2px solid var(--col-card-border);
 	border-radius: 9999px;
-	padding: 0px 2rem;
+	padding: 0px var(--container-h-padding);
 	/* height: 3rem; */
+}
+
+.filter-container::before {
+	--h-padding: 2rem;
+
+	content: "";
+	position: absolute;
+
+	width: var(--selection-width);
+	transform: translateX(calc(var(--selection-offset-x) - var(--container-h-padding) - var(--h-padding) - 2px));
+
+	border: 2px solid var(--col-text);
+	border-radius: 9999px;
+	padding: 1rem var(--h-padding);
+
+	transition: all 0.2s;
 }
 
 .filter {
 	cursor: pointer;
-	padding: 0.75rem 0px;
-}
+	padding: 0.75rem 0rem;
 
-.filter-selector {
-	position: absolute;
-	border: 2px solid var(--col-text);
-	border-radius: 9999px;
-	padding: 1rem 2rem;
-	width: 1rem;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 
