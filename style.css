@@ -343,7 +343,7 @@ div.section::after {
 
 	position: relative;
 	display: flex;
-	justify-content: center;
+	align-items: center;
 	gap: 2rem;
 
 	border: 2px solid var(--col-card-border);
@@ -369,8 +369,6 @@ div.section::after {
 }
 
 .filter {
-	display: block;
-
 	cursor: pointer;
 	padding: 0.75rem 0rem;
 
