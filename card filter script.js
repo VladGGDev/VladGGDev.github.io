@@ -29,12 +29,17 @@ function SelectFilter(filter)
 	DisplayCardsWithTag(filter.getAttribute("data-filter"));
 }
 
+
 filterContainer.addEventListener("mousedown", (event) =>
 {
 	if (event.target.classList.contains("filter"))
 	{
-		SelectFilter(event.target);
+		// Touches and mouse clicks do the same thing
+		var t = /touch/.test(event.type) ? event.targetTouches[0] : event.target;
+		SelectFilter(t);
 	}
 });
 
+
+// Select the "all" filter
 SelectFilter(filters[0]);
