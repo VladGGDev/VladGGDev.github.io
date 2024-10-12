@@ -180,6 +180,7 @@ a.button:active {
 	text-align: center;
 	color: var(--col-text);
 	font-size: min(6rem, min(15vw, 15vh));
+	line-height: 95%;
 
 	opacity: 0;
 	animation: hero-anim 0.75s ease 0.25s 1 normal forwards;
@@ -283,8 +284,8 @@ nav div.left {
 
 div.section {
 	--section-padding: 50px;
-	/* display: block;
-	width: 100%; */
+	line-height: 150%;
+	letter-spacing: 0.5px;
 	padding: var(--section-padding) var(--val-margin-horizontal);
 
 	background-image: linear-gradient(to right, #0000, var(--col-secondary) 25% 75%, #0000);
@@ -316,7 +317,7 @@ div.section::after {
 
 .section h2 {
 	font-size: 2rem;
-	margin-bottom: 1rem;
+	margin-bottom: 1.75rem;
 }
 
 
@@ -353,7 +354,7 @@ div.section::after {
 }
 
 .filter-container::before {
-	--h-padding: 1rem;
+	--h-padding: 0.825rem;
 
 	content: "";
 	position: absolute;

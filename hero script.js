@@ -84,11 +84,11 @@ const splashTexts = [
 	"Hello, world!",
 	"Don't forget to drink water!",
 	"I'm also a game developer",
-	"I'm alsa a web developer",
+	"I'm also a web developer",
 	"I can also do pixel art",
 	"I know Blender somewhat",
 	"Quality over quantity",
-	["Sometimes I play video games instead of programming 😏", 0.5, false],
+	["Sometimes I play video games instead of programming 😏", 0.75, false],
 	["😏😏😏", 0.5, false],
 	'Say "no!" to bugs',
 	["Bugs are my worst enemy >:(", 1, false],
@@ -101,9 +101,13 @@ const splashTexts = [
 	"Hello, future employer!",
 	"What does this button do?",
 	['<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">This splash text is actually a link!</a>', 0.25],
-	["Vibe check!", 0.5],
+	["Vibe check!", 0.75],
 	"Check your posture!",
-	"Ergonomics!"
+	"Ergonomics!",
+	"Big list of splash texts that I have right here",
+	"Typing this with all of my ten fingers",
+	"Whaaaaaaaat?",
+	["Right...", 0.9]
 ];
 
 
