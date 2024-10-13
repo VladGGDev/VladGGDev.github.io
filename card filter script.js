@@ -5,7 +5,7 @@ function DisplayCardsWithTag(tag)
 	{
 		if (cards[i].getAttribute("data-filter-tag").includes(tag))
 		{
-			cards[i].style.display = "block";
+			cards[i].style.display = "flex";
 		}
 		else
 		{
