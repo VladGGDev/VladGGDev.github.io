@@ -318,6 +318,7 @@ div.section::after {
 .section h2 {
 	font-size: 2rem;
 	margin-bottom: 1.75rem;
+	line-height: normal;
 }
 
 
@@ -445,7 +446,7 @@ div.section::after {
 
 	align-self: center;
 	position: absolute;
-	top: -15px;
+	top: -13px;
 
 	background-image: url("/Images/Featured\ star.svg");
 	background-position: 12.5px;
