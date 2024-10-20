@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -21,7 +24,12 @@
 
 	--col-card-border: rgba(119, 214, 255, 0.25);
 	--col-card-background: rgba(0, 0, 0, 15%);
+
+	--font-text: "Montserrat", sans-serif;
+	--font-heading: "Montserrat", sans-serif;
+	--font-h1: "Poppins", sans-serif;
 }
+
 
 
 
@@ -32,9 +40,25 @@ body {
 	background: var(--col-background);
 	color: var(--col-text);
 
-	font-family: sans-serif;
+	font-family: var(--font-text);
 }
 
+
+
+
+h1 {
+	font-family: var(--font-h1);
+	font-weight: 800;
+}
+
+h2 {
+	font-family: var(--font-heading);
+	font-weight: 800;
+}
+
+h3 {
+	font-family: var(--font-text);
+}
 
 
 
@@ -214,6 +238,7 @@ nav {
 	/* background: rgba(0, 0, 0, 0.05); */
 
 	font-size: 1.25rem;
+	font-family: var(--font-h1);
 
 	display: flex;
 	justify-content: right;
@@ -316,7 +341,7 @@ div.section::after {
 
 
 .section h2 {
-	font-size: 2rem;
+	font-size: 2.25rem;
 	margin-bottom: 1.75rem;
 	line-height: normal;
 }
